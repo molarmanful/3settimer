@@ -1,0 +1,18 @@
+CACHE MANIFEST
+#1
+CACHE:
+index.html
+
+#scripts
+jquery.js
+scrambler.js
+timer.js
+
+#ionicons
+ionicons.css
+
+#bootstrap
+bootstrap.css
+
+NETWORK:
+*
