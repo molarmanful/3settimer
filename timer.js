@@ -18,7 +18,7 @@ var csg = function(a, l){
 	var scramble = [];
 	var move = a[Math.floor(Math.random() * a.length)];
 	while(i < l){
-	  while(scramble[scramble.length - 1] == move || scramble[scramble.length - 1].split()[scramble[scramble.length - 1].split().length - 1] == move){
+	  while(scramble[scramble.length - 1] == move || scramble[scramble.length - 1].split()[scramble[scramble.length - 1].length - 1] == move){
 	    move = a[Math.floor(Math.random() * a.length)];
 	  }
 	  scramble.push(move);
