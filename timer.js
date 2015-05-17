@@ -54,8 +54,8 @@ function megascramble(turns, suffixes){
  return s.replace('undefined', '');
 }
 
-var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
-var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223'];
+var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'columns'];
 
 //stored time get
 if(typeof(Storage) != 'undefined') {
@@ -134,16 +134,22 @@ var scr = function(){
     return scramblers[333].getPLLScramble();
   }
   if(st == 'cross'){
-    return scramblers[333].customScramble([],[],[],[]);
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,8,9,10,11],[0,1,2,3,4,5,6,7],[0,1,2,3,8,9,10,11]);
   }
   if(st == 'xcross'){
-    return scramblers[333].customScramble([],[],[],[]);
+    return scramblers[333].customScramble([0,1,2,4,5,6,7],[0,1,2,8,9,10,11],[0,1,3,4,5,6,7],[0,1,2,3,9,10,11]);
   }
   if(st == '222'){
-    return scramblers[333].customScramble([],[],[],[]);
+    return scramblers[333].customScramble([0,1,2,4,5,6,7],[0,1,2,4,5,8,9,10,11],[0,1,3,4,5,6,7],[0,1,2,3,6,7,9,10,11]);
   }
   if(st == '223'){
-    return scramblers[333].customScramble([],[],[],[]);
+    return scramblers[333].customScramble([0,1,4,5,6,7],[0,1,8,4,9,10,11],[0,3,4,5,6,7],[0,1,2,3,7,10,11]);
+  }
+  if(st == 'belt'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7]);
+  }
+  if(st == 'columns'){
+    return scramblers[333].customScramble([4,5,6,7],[4,5,6,7,8,9,10,11],[4,5,6,7],[0,1,2,3,4,5,6,7]);
   }
 };
 $('#scramble').html(scr);
