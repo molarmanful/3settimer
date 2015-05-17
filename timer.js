@@ -21,7 +21,7 @@ var csg = function(a, l){
 	  while(move == scramble[scramble.length - 1]){
 	    move = a[Math.floor(Math.random() * a.length)];
 	  }
-	  scramble += move + ' ';
+	  scramble.push(move);
 	  i++;
 	}
 	scramble.join(' ');
