@@ -17,7 +17,7 @@ var csg = function(a, l){
 	var i = 0;
 	var scramble = '';
 	while(i < l){
-	  x += a[Math.floor(Math.random() * a.length)];
+	  scramble += a[Math.floor(Math.random() * a.length)];
 	}
 	return scramble;
 }
