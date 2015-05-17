@@ -41,7 +41,7 @@ if(typeof(Storage) != 'undefined') {
 var st = 'full';
 var sn = 1;
 var timer_obj = new startTimer(document.getElementById('time'));
-scramblers[333].initialize();
+scramblers[333].initialize(null, Math);
 var scr = function(){
   if(st == 'full'){
     scramblers[333].getRandomScramble();
