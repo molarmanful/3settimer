@@ -24,7 +24,8 @@ var csg = function(a, l){
 	  scramble += move + ' ';
 	  i++;
 	}
-	return scramble.join(' ');
+	scramble.join(' ');
+	return scramble;
 }
 
 var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
