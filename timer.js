@@ -22,7 +22,6 @@ var csg = function(a, l){
 	    move = a[Math.floor(Math.random() * a.length)];
 	  }
 	  scramble += move + ' ';
-	  while
 	  i++;
 	}
 	return scramble;
