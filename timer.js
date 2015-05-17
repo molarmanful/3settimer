@@ -14,17 +14,21 @@ Array.prototype.average = function(){
   return j ? sum / j : 0;
 };
 
-var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
-var ev = ['222', '333', '333oh', '333bf', '333ft', '444', '444bf', '555', '555bf', '666', '777', 'minx', 'pyram', 'sq1', 'clock', 'skewb'];
+var times = [];
+var ev = ['full', 'ht', 'eo', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll'];
 
 //stored time get
+$.each(ev, function(i, v){
+	scramblers[v].initialize();
+	times.push([]);
+});
 if(typeof(Storage) != 'undefined') {
   if(localStorage.getItem('times') != null){
     times = JSON.parse(localStorage['times']);
   }
 } else {
   $.cookie.json = true;
-  if($.cookie('times') != undefined && $.cookie('times').length == 15){
+  if($.cookie('times') != undefined){
     times = $.cookie('times');
   }
 }
@@ -33,14 +37,11 @@ if(typeof(Storage) != 'undefined') {
 var st = '333';
 var sn = 1;
 var timer_obj = new startTimer(document.getElementById('time'));
-$.each(ev, function(i, v){
-  scramblers[v].initialize(null, Math);
-});
 var scr = function(){
-  return scramblers[st].getRandomScramble().scramble_string;
+  
 };
 $('#scramble').html(scr);
-$('.navbar-brand .type').html('<span class="cubing-icon icon-333"></span> 3x3x3');
+$('.navbar-brand .type').html('Normal');
 
 //no spacebar scrolls allowed!
 $(document).keydown(function(e) {
@@ -134,9 +135,6 @@ $('#resl').click(function(){
 $('#st li a').click(function(){
   st = $(this).attr('class');
   sn = $.inArray(st, ev);
-  scr = function(){
-    return scramblers[st].getRandomScramble().scramble_string;
-  };
   $('#scramble').html(scr);
   $('.navbar-brand .type').html($(this).html());
 });
