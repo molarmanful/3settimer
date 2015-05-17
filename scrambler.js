@@ -2,7 +2,7 @@ if (typeof scramblers === "undefined") {
   var scramblers = {};
 }
 
-scramblers["333fm"] = scramblers["333ft"] = scramblers["333bf"] = scramblers["333oh"] = scramblers["333"] = (function() {
+scramblers["333"] = (function() {
 
 
 
