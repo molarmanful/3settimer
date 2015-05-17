@@ -1763,6 +1763,12 @@ function drawSquare(r, cx, cy, w, fillColor) {
   var getZZLSScramble = function() {
 	return customScramble([3,4,5,6,7],[3,8,9,10,11],[2,3,4,5,6],[]);
   }
+  var getEOScramble = function() {
+	return customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[]);
+  }
+  var getOScramble = function() {
+	return customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[],[]);
+  }
 
   return {
     /* mark2 interface */
@@ -1774,6 +1780,9 @@ function drawSquare(r, cx, cy, w, fillColor) {
 
     /* added methods */
     getEdgeScramble: getEdgeScramble,
+    customScramble: customScramble,
+    getEOScramble: getEOScramble,
+    getOScramble: getOScramble,
     getCornerScramble: getCornerScramble,
     getLLScramble: getLLScramble,
 	getCMLLScramble: getCMLLScramble,
