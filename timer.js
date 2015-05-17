@@ -17,10 +17,12 @@ var csg = function(a, l){
 	var i = 0;
 	var scramble = [];
 	var move = a[Math.floor(Math.random() * a.length)];
+	var lm = move.split()[0];
 	while(i < l){
-	  while(scramble[scramble.length - 1] == move || scramble[scramble.length - 1].substr(scramble[scramble.length - 1].length) == move){
+	  while(move.match(lm)){
 	    move = a[Math.floor(Math.random() * a.length)];
 	  }
+	  lm = move.split()[0];
 	  scramble.push(move);
 	  i++;
 	}
