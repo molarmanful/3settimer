@@ -13,20 +13,37 @@ Array.prototype.average = function(){
   }
   return j ? sum / j : 0;
 };
-var csg = function(a, l){
-	var i = 0;
-	var scramble = [];
-	var move = a[Math.floor(Math.random() * a.length)];
-	var lm = move.split()[0];
-	while(i < l){
-	  while(move.match(new RegExp(lm, 'g'))){
-	    move = a[Math.floor(Math.random() * a.length)];
-	  }
-	  lm = move.split()[0];
-	  scramble.push(move);
-	  i++;
-	}
-	return scramble.join(' ');
+function megascramble(turns, suffixes){
+ var donemoves=[];
+ var lastaxis;
+ var i,j,k;
+ var ss = [];
+ for(i=0;i<num;i++){
+  var s="";
+  lastaxis=-1;
+  for(j=0;j<len;j++){
+   var done=0;
+   do{
+    var first=Math.floor(Math.random()*turns.length);
+    var second=Math.floor(Math.random()*turns[first].length);
+    if (first!=lastaxis) {
+     for(k=0;k<turns[first].length;k++){donemoves[k]=0;}
+     lastaxis=first;
+    }
+    if (donemoves[second]==0) {
+     donemoves[second]=1;
+     if(isArray(turns[first][second])){
+      s+=rndEl(turns[first][second])+rndEl(suffixes)+" ";
+     }else{
+      s+=turns[first][second]+rndEl(suffixes)+" ";
+     }
+     done=1;
+    }
+   }while(done==0);
+  }
+  ss[i]+=s;
+ }
+ return ss;
 }
 
 var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
@@ -49,18 +66,19 @@ var st = 'full';
 var sn = 1;
 var timer_obj = new startTimer(document.getElementById('time'));
 scramblers[333].initialize(null, Math);
+var cubesuff=["","2","'"];
 var scr = function(){
   if(st == 'full'){
     return scramblers[333].getRandomScramble();
   }
   if(st == 'ht'){
-    return csg(['R2', 'L2', 'F2', 'B2', 'U2', 'D2'], 25);
+    return megascramble([["U","D"],["R","L"],["F","B"]],["2"]);
   }
   if(st == 'eo'){
-    return csg(['F2', 'B2', 'U', 'U\'', 'U2', 'D', 'D\'', 'D2', 'R', 'R\'', 'R2', 'L', 'L\'', 'L2'], 25);
+    return scramblers[333].getEOScramble();
   }
   if(st == 'o'){
-    return csg(['F2', 'B2', 'U', 'U\'', 'D', 'D\'', 'R2', 'L2'], 25);
+    return scramblers[333].getOScramble();
   }
   if(st == 'e'){
     return scramblers[333].getEdgeScramble();
@@ -69,22 +87,22 @@ var scr = function(){
     return scramblers[333].getCornerScramble();
   }
   if(st == 'ru'){
-    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2'], 25);
+    return megascramble([["U"],["R"]],cubesuff);
   }
   if(st == 'lu'){
-    return csg(['L', 'L\'', 'L2', 'U', 'U\'', 'U2'], 25);
+    return megascramble([["U"],["L"]],cubesuff);
   }
   if(st == 'mu'){
-    return csg(['M', 'M\'', 'M2', 'U', 'U\'', 'U2'], 25);
+    return megascramble([["U"],["M"]],cubesuff);
   }
   if(st == 'fru'){
-    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'F', 'F\'', 'F2'], 25);
+    return megascramble([["U"],["R"],["F"]],cubesuff);
   }
   if(st == 'rul'){
-    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'L', 'L\'', 'L2'], 25);
+    return megascramble([["U"],["R"],["L"]],cubesuff);
   }
   if(st == 'rru'){
-    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'r', 'r\'', 'r2'], 25);
+    return megascramble([["U"],["R"],["r"]],cubesuff);
   }
   if(st == 'lsll'){
     return scramblers[333].getLSLLScramble();
