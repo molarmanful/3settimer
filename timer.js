@@ -15,16 +15,16 @@ Array.prototype.average = function(){
 };
 var csg = function(a, l){
 	var i = 0;
-	var scramble = '';
+	var scramble = [];
 	var move = a[Math.floor(Math.random() * a.length)];
 	while(i < l){
-	  while(move == scramble.split(' ')[scramble.length - 1]){
+	  while(move == scramble[scramble.length - 1]){
 	    move = a[Math.floor(Math.random() * a.length)];
 	  }
 	  scramble += move + ' ';
 	  i++;
 	}
-	return scramble;
+	return scramble.join(' ');
 }
 
 var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
