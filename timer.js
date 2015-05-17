@@ -24,8 +24,7 @@ var csg = function(a, l){
 	  scramble.push(move);
 	  i++;
 	}
-	scramble.join(' ');
-	return scramble;
+	return scramble.join(' ');
 }
 
 var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
@@ -95,7 +94,7 @@ var scr = function(){
     return scramblers[333].getLLScramble();
   }
   if(st == 'cmll'){
-    scramblers[333].getCMLLScramble();
+    return scramblers[333].getCMLLScramble();
   }
   if(st == 'zbll'){
     return scramblers[333].getZBLLScramble();
