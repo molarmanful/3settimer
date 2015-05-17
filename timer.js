@@ -34,11 +34,11 @@ if(typeof(Storage) != 'undefined') {
 }
 
 //timer and scramble initialization
-var st = '333';
+var st = 'full';
 var sn = 1;
 var timer_obj = new startTimer(document.getElementById('time'));
 var scr = function(){
-  
+  return scramblers[st].getRandomScramble().scramble_string;
 };
 $('#scramble').html(scr);
 $('.navbar-brand .type').html('Normal');
