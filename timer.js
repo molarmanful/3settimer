@@ -51,7 +51,7 @@ function megascramble(turns, suffixes){
   }
   ss[i]+=s;
  }
- return ss;
+ return s.replace('undefined', '');
 }
 
 var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
