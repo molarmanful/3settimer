@@ -13,15 +13,23 @@ Array.prototype.average = function(){
   }
   return j ? sum / j : 0;
 };
+function rndEl(x){return x[Math.floor(Math.random()*x.length)];}
+function isArray(obj){
+ if(typeof obj=='object'){
+  var test = obj.constructor.toString().match(/array/i); 
+  return (test != null);
+  }
+ return false;
+}
 function megascramble(turns, suffixes){
  var donemoves=[];
  var lastaxis;
  var i,j,k;
  var ss = [];
- for(i=0;i<num;i++){
+ for(i=0;i<1;i++){
   var s="";
   lastaxis=-1;
-  for(j=0;j<len;j++){
+  for(j=0;j<25;j++){
    var done=0;
    do{
     var first=Math.floor(Math.random()*turns.length);
