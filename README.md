@@ -1,2 +1,2 @@
 # 3SetTimer
-A Rubik's Cube (exclusively 3x3) Timer with various subsets. Based on MinimalisTimer.
+A Rubik's Cube (exclusively 3x3) Timer with various subsets. Built on [MinimalisTimer](http://molarmanful.github.io/minimalistimer).
