@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <title>3SetTimer</title>
-    <meta name="description" content="Train yourself in various Rubik's Cube move sets and substeps.">
+    <meta name="description" content="Train yourself in various Rubik's Cube move sets and subsets.">
     <meta name="keywords" content="">
     <meta name="robots" content="index, nofollow">
     <link rel="manifest" href="manifest.json">
     <meta property="og:title" content="3SetTimer">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Train yourself in various Rubik's Cube move sets and substeps.">
+    <meta property="og:description" content="Train yourself in various Rubik's Cube move sets and subsets.">
     <meta property="og:image" content="https://dl.dropboxusercontent.com/s/wff2drn6ixmbpam/favicon-194x194.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@molarmanful">
     <meta name="twitter:title" content="3SetTimer">
-    <meta name="twitter:description" content="Train yourself in various Rubik's Cube move sets and substeps.">
+    <meta name="twitter:description" content="Train yourself in various Rubik's Cube move sets and subsets.">
     <meta name="twitter:image" content="https://dl.dropboxusercontent.com/s/wff2drn6ixmbpam/favicon-194x194.png">
     <link rel="author" href="https://plus.google.com/+BenPangMolarmanful"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -92,43 +92,7 @@
         </div>
         <div id="m" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown"><a role="button" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">Move Set <span class="caret"></span></a>
-              <ul class="st" role="menu" class="dropdown-menu">
-                <li><a class="full">Normal</a></li>
-                <li><a class="ht">Half-turns only</a></li>
-                <li><a class="eo">Preserve EO</a></li>
-                <li><a class="o">Preserve EO + CO</a></li>
-                <div class="divider"></div>
-                <li><a class="ru">2-gen R,U</a></li>
-                <li><a class="lu">2-gen L,U</a></li>
-                <li><a class="mu">2-gen M,U</a></li>
-                <li><a class="fru">3-gen F,R,U</a></li>
-                <li><a class="rul">3-gen R,U,L</a></li>
-                <li><a class="rru">3-gen R,r,U</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a role="button" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">Substep <span class="caret"></span></a>
-              <ul class="st" role="menu" class="dropdown-menu">
-                <li><a class="e">Edges only</a></li>
-                <li><a class="c">Corners only</a></li>
-                <div class="divider"></div>
-                <li><a class="cross">Cross</a></li>
-                <li><a class="xcross">XCross</a></li>
-                <li><a class="222">FRD 2x2x2</a></li>
-                <li><a class="223">FD 2x2x3</a></li>
-                <li><a class="belt">Belt</a></li>
-                <li><a class="columns">Columns</a></li>
-                <div class="divider"></div>
-                <li><a class="lsll">LS</a></li>
-                <li><a class="zzls">ZZLS</a></li>
-                <div class="divider"></div>
-                <li><a class="ll">LL</a></li>
-                <li><a class="cmll">CMLL + LSE</a></li>
-                <li><a class="zbll">ZBLL</a></li>
-                <li><a class="2gll">2GLL</a></li>
-                <li><a class="pll">PLL</a></li>
-              </ul>
-            </li>
+            <li><a data-toggle="modal" data-target="#setmod">Sets</a></li>
             <li class="hidden-sm hidden-xs"><a id="stats" data-toggle="modal" data-target="#mod"><span class="ionicon ion-ion-stats-bars"></span> Statistics</a></li>
             <li class="hidden-lg hidden-md hidden-sm"><a data-toggle="modal" data-target="#helpmod"><span class="ionicon ion-ion-help-circled"></span> Help</a></li>
             <li class="hidden-lg hidden-md hidden-sm"><a href="https://github.com/molarmanful/3settimer" target="_blank"><span class="ionicon ion-ion-social-github"></span> Source Code</a></li>
@@ -201,6 +165,48 @@
             <p class="ht dis hidden-sm hidden-xs">Press the <kbd>spacebar</kbd> to star/stop the timer. Click the scramble to change it.</p>
             <p class="ht dis hidden-md hidden-lg">Press the display to start/stop the timer. Tap the scramble to change it. Change device orientation to landscape to show statistics.</p>
             <p>Enjoy!</p>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default hidden-sm hidden-xs">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="helpmod" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" aria-label="Close" class="close hidden-sm hidden-xs"><span aria-hidden="true">&times;</span></button>
+            <h2>Sets</h2>
+          </div>
+          <div class="modal-body">
+            <ul class="list-inline">
+              <li><a data-dismiss="modal" class="full">Normal</a></li><br>
+              <li><a data-dismiss="modal" class="ht">Half-turns only</a></li>
+              <li><a data-dismiss="modal" class="eo">Preserve EO</a></li>
+              <li><a data-dismiss="modal" class="o">Preserve EO + CO</a></li><br>
+              <li><a data-dismiss="modal" class="ru">2-gen R,U</a></li>
+              <li><a data-dismiss="modal" class="lu">2-gen L,U</a></li>
+              <li><a data-dismiss="modal" class="mu">2-gen M,U</a></li>
+              <li><a data-dismiss="modal" class="fru">3-gen F,R,U</a></li>
+              <li><a data-dismiss="modal" class="rul">3-gen R,U,L</a></li>
+              <li><a data-dismiss="modal" class="rru">3-gen R,r,U</a></li><hr>
+              <li><a data-dismiss="modal" class="e">Edges only</a></li>
+              <li><a data-dismiss="modal" class="c">Corners only</a></li><br>
+              <li><a data-dismiss="modal" class="cross">Cross</a></li>
+              <li><a data-dismiss="modal" class="xcross">XCross</a></li>
+              <li><a data-dismiss="modal" class="222">FRD 2x2x2</a></li>
+              <li><a data-dismiss="modal" class="223">FD 2x2x3</a></li>
+              <li><a data-dismiss="modal" class="belt">Belt</a></li>
+              <li><a data-dismiss="modal" class="columns">Columns</a></li><br>
+              <li><a data-dismiss="modal" class="lsll">LS</a></li>
+              <li><a data-dismiss="modal" class="zzls">ZZLS</a></li><br>
+              <li><a data-dismiss="modal" class="ll">LL</a></li>
+              <li><a data-dismiss="modal" class="cmll">CMLL + LSE</a></li>
+              <li><a data-dismiss="modal" class="zbll">ZBLL</a></li>
+              <li><a data-dismiss="modal" class="2gll">2GLL</a></li>
+              <li><a data-dismiss="modal" class="pll">PLL</a></li>
+            </ul>
           </div>
           <div class="modal-footer">
             <button data-dismiss="modal" class="btn btn-default hidden-sm hidden-xs">Close</button>
