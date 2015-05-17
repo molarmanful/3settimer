@@ -16,8 +16,13 @@ Array.prototype.average = function(){
 var csg = function(a, l){
 	var i = 0;
 	var scramble = '';
+	var move = a[Math.floor(Math.random() * a.length)];
 	while(i < l){
-	  scramble += a[Math.floor(Math.random() * a.length)] + ' ';
+	  while(move == scramble.split(' ')[scramble.length - 1]){
+	    move = a[Math.floor(Math.random() * a.length)];
+	  }
+	  scramble += move + ' ';
+	  while
 	  i++;
 	}
 	return scramble;
