@@ -241,7 +241,7 @@ $('#resl').click(function(){
 });
 
 //change events
-$('.st li a').click(function(){
+$('#setmod .list-inline a').click(function(){
   st = $(this).attr('class');
   sn = $.inArray(st, ev);
   $('#scramble').html(scr);
