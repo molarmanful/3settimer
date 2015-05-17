@@ -45,61 +45,61 @@ var timer_obj = new startTimer(document.getElementById('time'));
 scramblers[333].initialize(null, Math);
 var scr = function(){
   if(st == 'full'){
-    scramblers[333].getRandomScramble();
+    return scramblers[333].getRandomScramble();
   }
   if(st == 'ht'){
-    csg(['R2', 'L2', 'F2', 'B2', 'U2', 'D2'], 25);
+    return csg(['R2', 'L2', 'F2', 'B2', 'U2', 'D2'], 25);
   }
   if(st == 'eo'){
-    csg(['F2', 'B2', 'U', 'U\'', 'U2', 'D', 'D\'', 'D2', 'R', 'R\'', 'R2', 'L', 'L\'', 'L2'], 25);
+    return csg(['F2', 'B2', 'U', 'U\'', 'U2', 'D', 'D\'', 'D2', 'R', 'R\'', 'R2', 'L', 'L\'', 'L2'], 25);
   }
   if(st == 'o'){
-    csg(['F2', 'B2', 'U', 'U\'', 'D', 'D\'', 'R2', 'L2'], 25);
+    return csg(['F2', 'B2', 'U', 'U\'', 'D', 'D\'', 'R2', 'L2'], 25);
   }
   if(st == 'e'){
-    scramblers[333].getEdgeScramble();
+    return scramblers[333].getEdgeScramble();
   }
   if(st == 'c'){
-    scramblers[333].getCornerScramble();
+    return scramblers[333].getCornerScramble();
   }
   if(st == 'ru'){
-    csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2'], 25);
+    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2'], 25);
   }
   if(st == 'lu'){
-    csg(['L', 'L\'', 'L2', 'U', 'U\'', 'U2'], 25);
+    return csg(['L', 'L\'', 'L2', 'U', 'U\'', 'U2'], 25);
   }
   if(st == 'mu'){
-    csg(['M', 'M\'', 'M2', 'U', 'U\'', 'U2'], 25);
+    return csg(['M', 'M\'', 'M2', 'U', 'U\'', 'U2'], 25);
   }
   if(st == 'fru'){
-    csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'F', 'F\'', 'F2'], 25);
+    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'F', 'F\'', 'F2'], 25);
   }
   if(st == 'rul'){
-    csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'L', 'L\'', 'L2'], 25);
+    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'L', 'L\'', 'L2'], 25);
   }
   if(st == 'rru'){
-    csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'r', 'r\'', 'r2'], 25);
+    return csg(['R', 'R\'', 'R2', 'U', 'U\'', 'U2', 'r', 'r\'', 'r2'], 25);
   }
   if(st == 'lsll'){
-    scramblers[333].getLSLLScramble();
+    return scramblers[333].getLSLLScramble();
   }
   if(st == 'zzls'){
-    scramblers[333].getZZLSScramble();
+    return scramblers[333].getZZLSScramble();
   }
   if(st == 'll'){
-    scramblers[333].getLLScramble();
+    return scramblers[333].getLLScramble();
   }
   if(st == 'cmll'){
     scramblers[333].getCMLLScramble();
   }
   if(st == 'zbll'){
-    scramblers[333].getZBLLScramble();
+    return scramblers[333].getZBLLScramble();
   }
   if(st == '2gll'){
-    scramblers[333].get2GLLScramble();
+    return scramblers[333].get2GLLScramble();
   }
   if(st == 'pll'){
-    scramblers[333].getPLLScramble();
+    return scramblers[333].getPLLScramble();
   }
 };
 $('#scramble').html(scr);
