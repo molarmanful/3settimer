@@ -19,7 +19,7 @@ var csg = function(a, l){
 	var move = a[Math.floor(Math.random() * a.length)];
 	var lm = move.split()[0];
 	while(i < l){
-	  while(move.match(lm)){
+	  while(move.match(new RegExp(lm, 'g'))){
 	    move = a[Math.floor(Math.random() * a.length)];
 	  }
 	  lm = move.split()[0];
