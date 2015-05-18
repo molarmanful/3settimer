@@ -250,7 +250,7 @@ $('#resl').click(function(){
 });
 
 //change events
-$('#setmod .list-inline a').click(function(){
+$('#setmod ul li a').click(function(){
   st = $(this).attr('class');
   sn = $.inArray(st, ev);
   $('#scramble').html(scr);
