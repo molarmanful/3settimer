@@ -54,8 +54,8 @@ function megascramble(turns, suffixes){
  return s.replace('undefined', '');
 }
 
-var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
-var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'fl', 'columns'];
+var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'fl', 'columns', 'ell'];
 
 //stored time get
 if(typeof(Storage) != 'undefined') {
@@ -153,6 +153,9 @@ var scr = function(){
   }
   if(st == 'columns'){
     return scramblers[333].customScramble([4,5,6,7],[4,5,6,7,8,9,10,11],[3,4,5,6],[0,1,2,3,4,5,6,7]);
+  }
+  if(st == 'ell'){
+    return scramblers[333].customScramble([],[8,9,10,11],[],[0,1,2,3]);
   }
 };
 $('#scramble').html(scr);
