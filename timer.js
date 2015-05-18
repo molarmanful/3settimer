@@ -159,7 +159,7 @@ var scr = function(){
   }
 };
 $('#scramble').html(scr);
-$('.navbar-brand .type').html('Random State');
+$('.navbar-brand .type').html('Optimal Random State');
 
 //no spacebar scrolls allowed!
 $(document).keydown(function(e) {
