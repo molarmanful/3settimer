@@ -55,7 +55,7 @@ function megascramble(turns, suffixes){
 }
 
 var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
-var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'fl', 'columns', 'ell'];
+var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'fl', 'columns', 'ell', '2o', '4o', '6o', '8o', '10o', '12o'];
 
 //stored time get
 if(typeof(Storage) != 'undefined') {
@@ -68,13 +68,25 @@ if(typeof(Storage) != 'undefined') {
     times = $.cookie('times');
   }
 }
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 
 //timer and scramble initialization
 var st = 'full';
 var sn = 1;
 var timer_obj = new startTimer(document.getElementById('time'));
 scramblers[333].initialize(null, Math);
-var cubesuff=["","2","'"];
+var cubesuff = ["","2","'"];
+var eoar = [0,1,2,3,4,5,6,7,8,9,10,11];
 var scr = function(){
   if(st == 'full'){
     return scramblers[333].getRandomScramble();
@@ -156,6 +168,24 @@ var scr = function(){
   }
   if(st == 'ell'){
     return scramblers[333].customScramble([],[8,9,10,11],[],[0,1,2,3]);
+  }
+  if(st == '2o'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],shuffle(eoar).slice(0, 2));
+  }
+  if(st == '4o'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],shuffle(eoar).slice(0, 4));
+  }
+  if(st == '6o'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],shuffle(eoar).slice(0, 6));
+  }
+  if(st == '8o'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],shuffle(eoar).slice(0, 8));
+  }
+  if(st == '10o'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],shuffle(eoar).slice(0, 10));
+  }
+  if(st == '12o'){
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],shuffle(eoar).slice(0, 12));
   }
 };
 $('#scramble').html(scr);
