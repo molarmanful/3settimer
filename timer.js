@@ -54,11 +54,11 @@ function megascramble(turns, suffixes){
  return s.replace('undefined', '');
 }
 
-var times = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
-var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'lu', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'fl', 'columns', 'ell', 'eocross', 'cls', 'ejf2l','l5c', 'l4c', 'l3c', 'pcmscol'];
+var ev = ['full', 'ht', 'eo', 'o', 'e', 'c', 'ru', 'mu', 'fru', 'rul', 'rru', 'lsll', 'zzls', 'll', 'cmll', 'zbll', '2gll', 'pll', 'cross', 'xcross', '222', '223', 'belt', 'fl', 'columns', 'ell', 'eocross', 'cls', 'ejf2l','l5c', 'l4c', 'l3c', 'pcmscol'];
+var times = [];
 
 //stored time get
-if(typeof(Storage) != 'undefined') {
+if(typeof(Storage) != undefined) {
   if(localStorage.getItem('times') != null){
     times = JSON.parse(localStorage['times']);
   }
@@ -67,6 +67,10 @@ if(typeof(Storage) != 'undefined') {
   if($.cookie('times') != undefined){
     times = $.cookie('times');
   }
+}
+//add new event arrays if necessary
+while(times.length < ev.length){
+  times.push([]);
 }
 
 //timer and scramble initialization
@@ -96,9 +100,6 @@ var scr = function(){
   }
   if(st == 'ru'){
     return megascramble([["U"],["R"]],cubesuff);
-  }
-  if(st == 'lu'){
-    return megascramble([["U"],["L"]],cubesuff);
   }
   if(st == 'mu'){
     return megascramble([["U"],["M"]],cubesuff);
