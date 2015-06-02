@@ -189,7 +189,7 @@ var scr = function(){
     return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,5,7,8,9,10,11],[0,1,2,3,4,5,6,7],[]);
   }
   if(st == 'zzll'){
-    return customScramble([4,5,6,7],[9,11],[3,4,5,6],[]);
+    return scramblers[333].customScramble([4,5,6,7],[9,11],[3,4,5,6],[]);
   }
 };
 $('#scramble').html(scr);
