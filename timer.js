@@ -56,7 +56,7 @@ function megascramble(turns, suffixes){
 
 var ev = ['full','ht','eo','o','e','c','ru','mu','fru','rul','rru','lsll','zzls','ll','cmll','zbll','2gll','pll','cross','xcross',
 '222','223','belt','fl','columns','ell','eocross','cls','ejf2l','l5c','l4c','l3c','pcmscol','slice','lse','eoline','zzll','tll',
-'tls','b2','cfl','tfsl'];
+'tls','b2','cfl','tfsl','co','ep','cp','p'];
 var times = [];
 
 //stored time get
@@ -210,6 +210,18 @@ var scr = function(){
   }
   if(st == 'eobelt'){
     return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[]);
+  }
+  if(st == 'co'){
+    return scramblers[333].getCustomScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[],[0,1,2,3,4,5,6,7,8,9,10,11]);
+  }
+  if(st == 'ep'){
+    return scramblers[333].getCustomScramble([0,1,2,3,4,5,6,7],[],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
+  }
+  if(st == 'cp'){
+    return scramblers[333].getCustomScramble([],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
+  }
+  if(st == 'p'){
+    return scramblers[333].getCustomScramble([],[],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
   }
 };
 $('#scramble').html(scr);
