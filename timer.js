@@ -212,16 +212,16 @@ var scr = function(){
     return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[]);
   }
   if(st == 'co'){
-    return scramblers[333].getCustomScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[],[0,1,2,3,4,5,6,7,8,9,10,11]);
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[],[0,1,2,3,4,5,6,7,8,9,10,11]);
   }
   if(st == 'ep'){
-    return scramblers[333].getCustomScramble([0,1,2,3,4,5,6,7],[],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
+    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
   }
   if(st == 'cp'){
-    return scramblers[333].getCustomScramble([],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
+    return scramblers[333].customScramble([],[0,1,2,3,4,5,6,7,8,9,10,11],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
   }
   if(st == 'p'){
-    return scramblers[333].getCustomScramble([],[],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
+    return scramblers[333].customScramble([],[],[0,1,2,3,4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11]);
   }
 };
 $('#scramble').html(scr);
