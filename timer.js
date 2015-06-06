@@ -203,7 +203,7 @@ var scr = function(){
     return scramblers[333].customScramble([1,4,5,6,7],[2,3,4,5,8,9,10,11],[0,3,4,5,6],[2,3,6,7,8,9,10,11]);
   }
   if(st == 'cfl'){
-    return scramblers[333].customScramble([0,1,2,3,4,5,6,7],[0,1,2,3,8,9,10,11],[0,1,2,3,4,5,6,7,8],[0,1,2,3,8,9,10,11]);
+    return scramblers[333].customScramble([4,5,6,7],[0,1,2,3,4,5,6,7,8,9,10,11],[3,4,5,6],[0,1,2,3,4,5,6,7,8,9,10,11]);
   }
 };
 $('#scramble').html(scr);
