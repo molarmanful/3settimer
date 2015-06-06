@@ -312,6 +312,7 @@ $('#resl').click(function(){
 $('#setmod ul li a').click(function(){
   st = $(this).attr('class');
   sn = $.inArray(st, ev);
+  updatestats();
   $('#scramble').html(scr);
   $('.navbar-brand .type').html($(this).html());
 });
