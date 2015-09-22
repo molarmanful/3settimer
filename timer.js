@@ -61,13 +61,13 @@ var times = [];
 
 //stored time get
 if(typeof(Storage) != undefined) {
-  if(localStorage.getItem('times') != null){
-    times = JSON.parse(localStorage['times']);
+  if(localStorage.getItem('times1') != null){
+    times = JSON.parse(localStorage['times1']);
   }
 } else {
   $.cookie.json = true;
-  if($.cookie('times') != undefined){
-    times = $.cookie('times');
+  if($.cookie('times1') != undefined){
+    times = $.cookie('times1');
   }
 }
 //add new event arrays if necessary
@@ -403,9 +403,9 @@ function subt(x){
 //store times
 window.onbeforeunload = function(){
   if(typeof(Storage) != 'undefined'){
-    localStorage['times'] = JSON.stringify(times);
+    localStorage['times1'] = JSON.stringify(times);
   }
-  $.cookie('times', JSON.stringify(times));
+  $.cookie('times1', JSON.stringify(times));
 };
   
 //function for updating stats
